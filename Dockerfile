@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
   echo 'export LD_LIBRARY_PATH=/clang_7.0.1/lib:LD_LIBRARY_PATH' >> ~/.bashrc \
   && curl -SL https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz \
   | tar -xJC . && \
-  echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc && \
+  echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc
 
 # Start from a Bash prompt
 #CMD [ "/bin/bash" ]
