@@ -19,4 +19,4 @@ RUN apt-get update && apt-get install -y \
   echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc
 
 # Start from a Bash prompt
-#CMD [ "/bin/bash" ]
+CMD [ "node --version" ]
