@@ -8,15 +8,15 @@ RUN apt-get update && apt-get install -y \
   xz-utils \
   build-essential \
   curl \
+  nodejs \
   && rm -rf /var/lib/apt/lists/* \
   && curl -SL http://releases.llvm.org/7.0.1/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz \
   | tar -xJC . && \
   mv clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04 clang_7.0.1 && \
   echo 'export PATH=/clang_7.0.1/bin:$PATH' >> ~/.bashrc && \
-  echo 'export LD_LIBRARY_PATH=/clang_7.0.1/lib:LD_LIBRARY_PATH' >> ~/.bashrc \
-  && curl -SL https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz \
-  | tar -xJC . && \
-  echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc
+  echo 'export LD_LIBRARY_PATH=/clang_7.0.1/lib:LD_LIBRARY_PATH' >> ~/.bashrc 
+  #&& curl -SL https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz \
+  #| tar -xJC . && \
+  #echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc
 
-# Start from a Bash prompt
-CMD [ "node --version" ]
+#CMD [ "" ]
