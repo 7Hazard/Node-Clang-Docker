@@ -12,8 +12,7 @@ RUN apt-get update && apt-get install -y \
   cmake \
   && rm -rf /var/lib/apt/lists/* \
   && curl -SL http://releases.llvm.org/7.0.1/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz | tar -xJC . \
-  && echo 'export PATH=/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH' >> ~/.bashrc \
-  && echo 'export LD_LIBRARY_PATH=/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04/lib:LD_LIBRARY_PATH' >> ~/.bashrc \
+  && cp -R clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04/* /usr/local/
   && curl -SL https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz | tar -xJC . \
   && echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc \
   && cp -R node-v10.15.0-linux-x64/* /usr/local/
