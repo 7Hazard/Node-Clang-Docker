@@ -9,12 +9,13 @@ RUN apt-get update && apt-get install -y \
   build-essential \
   curl \
   ninja-build \
+  cmake \
   && rm -rf /var/lib/apt/lists/* \
   && curl -SL http://releases.llvm.org/7.0.1/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz | tar -xJC . \
   && echo 'export PATH=/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH' >> ~/.bashrc \
   && echo 'export LD_LIBRARY_PATH=/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04/lib:LD_LIBRARY_PATH' >> ~/.bashrc \
   && curl -SL https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz | tar -xJC . \
-  #&& echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc \
+  && echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc \
   && cp -R node-v10.15.0-linux-x64/* /usr/local/
   #&& curl -SL https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3-Linux-x86_64.sh \
   #&& ./cmake-3.13.3-Linux-x86_64.sh --include-subdir --skip-license
