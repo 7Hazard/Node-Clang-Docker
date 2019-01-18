@@ -8,15 +8,14 @@ RUN apt-get update && apt-get install -y \
   xz-utils \
   build-essential \
   curl \
-  nodejs \
+  ninja-build \
   && rm -rf /var/lib/apt/lists/* \
-  && curl -SL http://releases.llvm.org/7.0.1/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz \
-  | tar -xJC . && \
-  mv clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04 clang_7.0.1 && \
-  echo 'export PATH=/clang_7.0.1/bin:$PATH' >> ~/.bashrc && \
-  echo 'export LD_LIBRARY_PATH=/clang_7.0.1/lib:LD_LIBRARY_PATH' >> ~/.bashrc 
-  #&& curl -SL https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz \
-  #| tar -xJC . && \
-  #echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc
+  && curl -SL http://releases.llvm.org/7.0.1/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz | tar -xJC . \
+  && echo 'export PATH=/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH' >> ~/.bashrc \
+  && echo 'export LD_LIBRARY_PATH=/clang_7.0.1/lib:LD_LIBRARY_PATH' >> ~/.bashrc \
+  && curl -SL https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz | tar -xJC . \
+  && sudo cp -R node-v10.15.0-linux-x64/* /usr/local/ \
+  && curl -SL https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3-Linux-x86_64.sh \
+  && ./cmake-3.13.3-Linux-x86_64.sh --include-subdir --skip-license
 
 #CMD [ "" ]
