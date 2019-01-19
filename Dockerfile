@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y \
   && curl -SL http://releases.llvm.org/7.0.1/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz | tar -xJC . \
   && cp -R clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04/* /usr/local/ \
   && curl -SL https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz | tar -xJC . \
-  && echo 'export PATH=/node-v10.15.0-linux-x64/bin:$PATH' >> ~/.bashrc \
   && cp -R node-v10.15.0-linux-x64/* /usr/local/
   #&& curl -SL https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3-Linux-x86_64.sh \
   #&& ./cmake-3.13.3-Linux-x86_64.sh --include-subdir --skip-license
