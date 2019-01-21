@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
   && curl -SL https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz | tar -xJC . \
   && cp -R node-v10.15.0-linux-x64/* /usr/local/ \
   && curl -SL https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3-Linux-x86_64.sh \
-  && chmod 777 cmake-3.13.3-Linux-x86_64.sh && ./cmake-3.13.3-Linux-x86_64.sh --include-subdir --skip-license
+  && chmod 777 cmake-3.13.3-Linux-x86_64.sh && ./cmake-3.13.3-Linux-x86_64.sh --include-subdir --skip-license \
   && cp -R cmake-3.13.3-Linux-x86_64/* /usr/local/
 
 #CMD [ "" ]
