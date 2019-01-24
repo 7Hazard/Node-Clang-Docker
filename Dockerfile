@@ -7,9 +7,12 @@ FROM ubuntu:18.04
 RUN apt-get update && apt-get install -y \
   xz-utils \
   build-essential \
+  gcc-8 \
   curl \
   ninja-build \
   cmake \
+  && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7 \
+  && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8 \
   && rm -rf /var/lib/apt/lists/* \
   && curl -SL http://releases.llvm.org/7.0.1/clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz | tar -xJC . \
   && cp -R clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04/* /usr/local/ \
