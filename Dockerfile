@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
   xz-utils \
   build-essential \
   gcc-8 \
+  g++-8 \
   curl \
   ninja-build \
   cmake \
