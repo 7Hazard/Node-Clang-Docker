@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
   ninja-build \
   git \
   python2.7 \
+  && ln -s /usr/bin/python2.7 /usr/bin/python \
   && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7 \
   && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8 \
   && rm -rf /var/lib/apt/lists/* \
