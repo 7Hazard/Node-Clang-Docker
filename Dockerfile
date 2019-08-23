@@ -1,5 +1,5 @@
 # Check http://releases.llvm.org/download.html#7.0.1 for the latest available binaries
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 
 # Make sure the image is updated, install some prerequisites,
 # Download the latest version of Clang (official binary) for Ubuntu
