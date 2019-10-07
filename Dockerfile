@@ -5,7 +5,7 @@ FROM ubuntu:18.04
 # Download the latest version of Clang (official binary) for Ubuntu
 # Extract the archive and add Clang to the PATH
 RUN apt-get update && apt-get install -y \
-  xz-utils \
+  xz-utils zip gzip tar \
   build-essential \
   gcc-8 \
   g++-8 \
