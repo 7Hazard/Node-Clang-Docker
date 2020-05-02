@@ -16,6 +16,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get update && apt-get install -q
   lsb-release \
   wget \
   software-properties-common \
+  openjdk-11-jdk \
   && ln -s /usr/bin/python2.7 /usr/bin/python \
   && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7 \
   && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8 \
@@ -26,6 +27,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get update && apt-get install -q
   && cp -R node-v10.15.0-linux-x64/* /usr/local/ \
   && curl -sSL https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3-Linux-x86_64.tar.gz | tar xvz -C . \
   && rm -rf /usr/local/man \
-  && cp -rf cmake-3.13.3-Linux-x86_64/* /usr/local/
+  && cp -rf cmake-3.13.3-Linux-x86_64/* /usr/local/ \
+  && echo "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/" >> /etc/environment \
+  && source /etc/environment
 
 #CMD [ "" ]
