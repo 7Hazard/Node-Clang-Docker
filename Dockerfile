@@ -28,7 +28,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get update && apt-get install -q
   && curl -sSL https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3-Linux-x86_64.tar.gz | tar xvz -C . \
   && rm -rf /usr/local/man \
   && cp -rf cmake-3.13.3-Linux-x86_64/* /usr/local/ \
-  && echo "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/" >> /etc/environment \
+  && echo "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/" >> /etc/environment \
   && . /etc/environment
 
 #CMD [ "" ]
